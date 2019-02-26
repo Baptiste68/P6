@@ -4,7 +4,6 @@ CREATE TABLE ocpizza.Adresse (
                 id_adresse SERIAL PRIMARY KEY,
                 rue VARCHAR(250) NOT NULL,
                 ville VARCHAR(250) NOT NULL,
-                numero VARCHAR(6) NOT NULL,
                 code_postal VARCHAR(8) NOT NULL
 );
 
@@ -20,7 +19,7 @@ CREATE TABLE ocpizza.Client (
                 id_client SERIAL PRIMARY KEY,
                 nom_client VARCHAR(250) NOT NULL,
                 prenom_client VARCHAR(250) NOT NULL,
-                id_compte INTEGER NOT NULL,
+                id_compte INTEGER,
                 id_adresse INTEGER NOT NULL
 );
 
@@ -59,7 +58,8 @@ CREATE TABLE ocpizza.Stock (
 
 CREATE TABLE ocpizza.Pizza (
                 id_pizza SERIAL PRIMARY KEY,
-                nom_pizza VARCHAR(250) NOT NULL
+                nom_pizza VARCHAR(250) NOT NULL,
+                prix_pizza DECIMAL(6) NOT NULL
 );
 
 
@@ -74,11 +74,12 @@ CREATE TABLE ocpizza.Recette (
 CREATE TABLE ocpizza.Commande (
                 id_commande SERIAL PRIMARY KEY,
                 statut_commande VARCHAR(20) NOT NULL,
-                date_commande VARCHAR(20) NOT NULL,
+                date_commande DATE NOT NULL,
+                prix_commande DECIMAL(6),
                 id_client INTEGER NOT NULL,
                 id_pizzaiolo INTEGER NOT NULL,
-                id_vendeur INTEGER NOT NULL,
-                id_livreur INTEGER NOT NULL,
+                id_vendeur INTEGER,
+                id_livreur INTEGER,
                 id_adresse INTEGER NOT NULL
 );
 
