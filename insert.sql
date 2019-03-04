@@ -28,8 +28,8 @@ INSERT INTO ocpizza.client (prenom_client,nom_client,id_adresse) (SELECT 'Justin
 INSERT INTO ocpizza.pizza (nom_pizza,prix_pizza) VALUES ('Margarita','5'),('Salami','6'),('4 Fromages','6.5'),('Végétarienne','6'),('Calzone','7'),('Rucola','8'),('Saumon','8.5'),('Capres','6.5'),('4 Saisons','7.5');
 
 -- Ingredient
-INSERT INTO ocpizza.ingredient (nom_ingredient,quantiteu_ingredient) VALUES ('Sauce Tomates','L'),('Fromage rapé','kg'),('Salami','g'),('Gorgonzola','kg'),('Mozzarella','kg'),('Chèvre','kg'),('Courgette','g'),('Oignon','g'),('Aubergine','g'),('Oeuf','u');
-INSERT INTO ocpizza.ingredient (nom_ingredient,quantiteu_ingredient) VALUES ('Roquette','g'),('Saumon','g'),('Capres','g'),('Champignons','g'),('Pâte','kg');
+INSERT INTO ocpizza.ingredient (nom_ingredient,quantiteu_ingredient,seuil_ingredient) VALUES ('Sauce Tomates','L','1'),('Fromage rapé','kg','1'),('Salami','g','100'),('Gorgonzola','kg','0.2'),('Mozzarella','kg','0.2'),('Chèvre','kg','0.1'),('Courgette','g','110'),('Oignon','g','75'),('Aubergine','g','100'),('Oeuf','u','3');
+INSERT INTO ocpizza.ingredient (nom_ingredient,quantiteu_ingredient,seuil_ingredient) VALUES ('Roquette','g','20'),('Saumon','g','10.2'),('Capres','g','50'),('Champignons','g','70'),('Pâte','kg','1.5');
 
 -- Restaurant
 INSERT INTO ocpizza.restaurant (nom_restaurant,id_adresse) (SELECT 'Pizzeria Nonina',id_adresse FROM ocpizza.adresse ORDER BY random() LIMIT 1) UNION (SELECT 'Pizzeria Marina',id_adresse FROM ocpizza.adresse ORDER BY random() LIMIT 1) UNION (SELECT 'Pizzeria Leana',id_adresse FROM ocpizza.adresse ORDER BY random() LIMIT 1) UNION (SELECT 'Pizzeria Angela',id_adresse FROM ocpizza.adresse ORDER BY random() LIMIT 1) UNION (SELECT 'Pizzeria Madona',id_adresse FROM ocpizza.adresse ORDER BY random() LIMIT 1);

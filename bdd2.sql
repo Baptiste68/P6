@@ -44,7 +44,8 @@ CREATE TABLE ocpizza.Employe (
 CREATE TABLE ocpizza.Ingredient (
                 id_ingredient SERIAL PRIMARY KEY,
                 nom_ingredient VARCHAR(250) NOT NULL,
-                quantiteU_ingredient VARCHAR(10) NOT NULL
+                quantiteU_ingredient VARCHAR(10) NOT NULL,
+                seuil_ingredient DECIMAL(4) NOT NULL
 );
 
 
