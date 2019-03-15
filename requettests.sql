@@ -1,3 +1,10 @@
+-- Pizza dans commande
+select nom_pizza, quantite_pizza
+from ocpizza.panier as pan
+inner join ocpizza.pizza as p on p.id_pizza = pan.id_pizza
+where id_commande = '1'
+
+
 -- Recette pizza 4 saisons
 select i.nom_ingredient, quantite_recette, i.quantiteu_ingredient
 from ocpizza.recette 
